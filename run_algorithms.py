@@ -26,23 +26,19 @@ if not os.path.exists(folder_name):
 
 parser = argparse.ArgumentParser(description='parse parameters')
 parser.add_argument('ALGORITHM_NAME', metavar='ALGORITHM_NAME', type=str,
-                    nargs=1, help='ALGORITHM_NAME')
+                    help='ALGORITHM_NAME')
 parser.add_argument('PROBLEM_NUMBER', metavar='PROBLEM_NUMBER', type=int,
-                    nargs=1, help='PROBLEM_NUMBER')
+                    help='PROBLEM_NUMBER')
 parser.add_argument('FIRST_RUN', metavar='FIRST_RUN', type=int,
-                    nargs=1, help='number of first optimization run')
+                    help='number of first optimization run')
 parser.add_argument('N_RUNS', metavar='N_RUNS', type=int,
-                    nargs=1, help='number of optimization runs')
-parser.add_argument('GOMEA_MAX_TIME', metavar='GOMEA_MAX_TIME', type=int,
-                    nargs=1, help='GOMEA_MAX_TIME, seconds')
-
+                    help='number of optimization runs')
 args = parser.parse_args()
 
-ALGORITHM_NAME = args.ALGORITHM_NAME[0]
-PROBLEM_NUMBER = int(args.PROBLEM_NUMBER[0])
-FIRST_RUN = int(args.FIRST_RUN[0])
-N_RUNS = int(args.N_RUNS[0])
-MAX_TIME = int(args.GOMEA_MAX_TIME[0])
+ALGORITHM_NAME = args.ALGORITHM_NAME
+PROBLEM_NUMBER = int(args.PROBLEM_NUMBER)
+FIRST_RUN = int(args.FIRST_RUN)
+N_RUNS = int(args.N_RUNS)
 
 PROBLEM_NAMES = {0: 'MaxCut_Sparse',
                  1: 'Concatenated_Deceptive_Trap_4_4',
